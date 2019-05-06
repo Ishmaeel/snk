@@ -1,0 +1,135 @@
+<!doctype html public "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+<head>
+<title>SNK v2.0</title>
+<meta http-equiv="KEYWORDS" content="sterile noiz klan">
+<meta http-equiv="DESCRIPTION" content="sterile noiz klan home">
+
+<script language="Javascript1.1">
+<!--
+
+var img1location = "console/grn.gif"
+var img2location = "console/red.gif"
+
+function LaunchConsole() 
+{
+  top.location.href = "console.html";
+}
+
+function initArray() {
+
+this.length = initArray.arguments.length;
+  for (var i = 0; i < this.length; i++) {
+  this[i] = initArray.arguments[i];
+  }
+}
+
+var pics = new initArray(
+"console/flicker.gif",
+"console/left.jpg",
+"console/right.jpg",
+"console/top.jpg",
+"console/topleft.jpg",
+"console/topright.jpg",
+"console/bottom.jpg",
+"console/bottomleft.jpg",
+"console/bottomright.jpg",
+"console/but1_lit.jpg",
+"console/but1_unlit.jpg",
+"console/but2_lit.jpg",
+"console/but2_unlit.jpg",
+"console/but3_lit.jpg",
+"console/but3_unlit.jpg",
+"console/but4_lit.jpg",
+"console/but4_unlit.jpg",
+"console/but5_lit.jpg",
+"console/but5_unlit.jpg",
+"console/but6_lit.jpg",
+"console/but6_unlit.jpg",
+"console/but7_lit.jpg",
+"console/but7_unlit.jpg",
+"console/but8_lit.jpg",
+"console/but8_unlit.jpg",
+"console/but9_lit.jpg",
+"console/but9_unlit.jpg",
+"console/expose.jpg"
+);
+
+var loaded = new initArray(pics.length);
+var num_loaded = 0;
+
+for (h = 0; h < pics.length; h++) {
+loaded[h] = 0;
+}
+
+function loadg() {
+  for (g = 0; g < pics.length; g++) {
+   eval('document.preload'+g+'.src = "'+pics[g]+'";');
+   loaded[g]++
+  }
+}
+
+function update(z) {
+
+loaded[z]++;
+
+ if (loaded[z] == 2) {
+  eval('document.status'+num_loaded+'.src = img1location;');
+  num_loaded++;
+
+  if (num_loaded == pics.length) {  LaunchConsole();  }
+ }
+}
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#000000" text="#00FF00" link="#00FF00" vlink="#00FF00" alink="#FFFF00">
+
+<table height="90%" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr><td align="center" valign="center">
+
+<h1><font face="Arial">SNK v2.0<br></font></h1>
+<font face="Arial">
+<h3>Please wait while the system check is in progress.</h3>
+Initializing...<br>
+
+<small>0%</small>
+<script language="Javascript1.1">
+<!--
+document.write("<IMG src="+img1location+" width=5 height=10>")
+var offset = 280 / pics.length
+for (q = 0; q < pics.length; q++) {
+  document.write("<IMG src="+img2location+" width=5 height=10 name=\"status"+q+"\">")
+}
+//-->
+</script>
+
+<small>100%</small>
+
+<br><br><a href="console.html" target="_top">Skip preloading of images</a><br>
+</font>
+</td></tr></table>
+
+<center>
+
+<script language="Javascript1.1">
+<!--
+for (w = 0; w < pics.length; w++) {
+  document.write("<IMG src="+img2location+" width=1 height=1 onLoad=\"update("+w+")\" name=\"preload"+w+"\">")
+}
+loadg();
+//-->
+</script>
+
+<font face="Arial">
+<font size="-1"><br><a href="lite.html" target="_top">Jump to lite version (for slow connections)</a><br></font>
+</font>
+
+</center>
+
+</body>
+</html>
